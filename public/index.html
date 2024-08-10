@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Post App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #444;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        input[type="file"] {
+            margin-bottom: 15px;
+        }
+        input[type="text"], button {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Post to Facebook</h1>
+    <form action="/post-image" method="post" enctype="multipart/form-data">
+        <input type="file" name="photo" required>
+        <input type="text" name="caption" placeholder="Enter a caption" required>
+        <button type="submit">Upload Photo</button>
+    </form>
+</body>
+</html>
