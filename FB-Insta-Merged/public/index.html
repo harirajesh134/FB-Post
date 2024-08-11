@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post to Social Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #444;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-bottom: 30px;
+        }
+        input[type="file"] {
+            margin-bottom: 15px;
+        }
+        input[type="text"], button {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .toggle-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        label {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Post to Facebook and Instagram</h1>
+    <form action="/post-to-social-media" method="post" enctype="multipart/form-data">
+        <div class="toggle-container">
+            <label for="facebookToggle">Facebook</label>
+            <input type="checkbox" id="facebookToggle" name="postToFacebook" checked>
+        </div>
+        <div class="toggle-container">
+            <label for="instagramToggle">Instagram</label>
+            <input type="checkbox" id="instagramToggle" name="postToInstagram" checked>
+        </div>
+        <input type="file" name="photo" required>
+        <input type="text" name="caption" placeholder="Enter a caption" required>
+        <button type="submit">Upload Photo</button>
+    </form>
+</body>
+</html>
