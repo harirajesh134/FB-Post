@@ -24,7 +24,7 @@ const accessToken = 'EAANCF4BETdsBOZCLZCpVKjaXq0jcjhkP9pkJUwL3HmjtqeUKewSFY2ZC6i
 
 // Route to handle the Facebook OAuth redirection
 app.get('/auth', (req, res) => {
-    const facebookAuthUrl = `https://www.facebook.com/v17.0/dialog/oauth?client_id=803043432016729&redirect_uri=http://localhost:3000/callback&scope=pages_manage_posts,pages_read_engagement,pages_manage_metadata,pages_manage_engagement`;
+    const facebookAuthUrl = `https://www.facebook.com/v17.0/dialog/oauth?client_id=917093633773019&redirect_uri=http://localhost:3000/callback&scope=pages_manage_posts,pages_read_engagement,pages_manage_metadata,pages_manage_engagement`;
     res.redirect(facebookAuthUrl);
 });
 

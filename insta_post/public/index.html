@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post to Instagram</title>
+</head>
+<body>
+    <h1>Post Image to Instagram</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="image">Select Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+
+        <label for="caption">Caption:</label>
+        <input type="text" id="caption" name="caption" required><br><br>
+
+        <button type="submit">Post to Instagram</button>
+    </form>
+
+    <div id="response"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#uploadForm").on('submit', function(e){
+                e.preventDefault();
+
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: '/post-to-instagram',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response){
+                        $('#response').html('<p>Image posted successfully!</p>');
+                    },
+                    error: function(){
+                        $('#response').html('<p>Failed to post image.</p>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
